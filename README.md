@@ -1,0 +1,2 @@
+# duckdb_analytics_lucas_lindh_mlops25
+Learning duckdb

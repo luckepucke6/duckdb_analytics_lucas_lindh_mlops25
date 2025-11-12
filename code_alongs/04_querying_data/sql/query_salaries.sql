@@ -29,7 +29,9 @@ SELECT
 FROM
     data_jobs
 OFFSET
-    2;
+    3
+LIMIT
+    5;
 
 desc data_jobs;
 
@@ -48,6 +50,7 @@ SELECT
 FROM
     data_jobs;
 
+-- unique -> DISTINCT
 SELECT DISTINCT
     employment_type
 FROM

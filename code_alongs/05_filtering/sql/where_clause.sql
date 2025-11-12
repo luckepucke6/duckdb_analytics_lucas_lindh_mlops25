@@ -25,7 +25,7 @@ WHERE
 
 -- find median salary for entry level jobs
 SELECT
-    MEDIAN(salary_in_usd) AS median_salary_usd,
+    MEDIAN (salary_in_usd) AS median_salary_usd,
     AVG(salary_in_usd) AS mean_salary_usd
 FROM
     data_jobs
@@ -34,7 +34,7 @@ WHERE
 
 -- find median salary for mid level jobs
 SELECT
-    MEDIAN(salary_in_usd) AS median_salary_usd,
+    MEDIAN (salary_in_usd) AS median_salary_usd,
     AVG(salary_in_usd) AS mean_salary_usd
 FROM
     data_jobs

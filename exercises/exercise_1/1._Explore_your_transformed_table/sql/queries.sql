@@ -66,4 +66,12 @@ ORDER BY
 -- e) Find out the top earning job titles based on their median salaries and how much they earn.
 SELECT
     job_title,
-    median (salary_per_month_in_sek) AS median_salary_per_month,
+    median (salary_per_month_in_sek) AS median_salary_per_month
+FROM
+    cleaned_salaries
+GROUP BY
+    job_title
+ORDER BY
+    median_salary_per_month DESC
+LIMIT
+    5;

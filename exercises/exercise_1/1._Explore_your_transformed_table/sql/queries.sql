@@ -75,3 +75,45 @@ ORDER BY
     median_salary_per_month DESC
 LIMIT
     5;
+
+-- f) How many percentage of the jobs are fully remote, 50 percent remote and fully not remote.
+SELECT
+    remote_ratio,
+    COUNT(*) AS antal_job,
+    ROUND(
+        COUNT(*) * 100 / (
+            SELECT
+                COUNT(*)
+            FROM
+                cleaned_salaries
+        ),
+        1
+    ) AS procentandel
+FROM
+    cleaned_salaries
+GROUP BY
+    remote_ratio
+ORDER BY
+    remote_ratio;
+
+-- g) Pick out a job title of interest and figure out if company size affects the salary.
+-- Make a simple analysis as a comprehensive one requires causality investigations which are much harder to find.
+
+-- Här undersöker vi vilka roller som har flest 'arbetare' för att se vilken som är bra för analys
+SELECT 
+    job_title,
+    COUNT(*) AS antal
+FROM cleaned_salaries
+GROUP BY job_title
+ORDER BY antal DESC;
+
+-- Här kollar vi på vad medelvärdet på månadslön är för varje company_size för Data Analyst
+SELECT
+    company_size,
+    median(salary_per_month_in_sek) AS median_månadslön
+FROM
+    cleaned_salaries
+WHERE
+    job_title = 'Data Analyst'
+GROUP BY company_size
+ORDER BY median_månadslön DESC;

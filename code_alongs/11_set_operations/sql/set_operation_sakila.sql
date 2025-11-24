@@ -10,7 +10,7 @@ WHERE
     c.first_name LIKE 'A%'
 UNION
 SELECT
-    'Actor',
+    'actor',
     a.first_name,
     a.last_name
 FROM

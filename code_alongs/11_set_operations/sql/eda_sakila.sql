@@ -18,6 +18,29 @@ FROM
 -- plays in movies: academy dinosaur, anaconda confessions, ...
 FROM actor:
 
+-- bridge table between film and category
+-- it holds film_id and category_id
+FROM
+    category;
+
+SELECT 
+    'customer' AS type,
+    c.first_name || ' ' || c.last_name AS name
+FROM customer c; -- alias
+
+-- all customers first name starting with B
+SELECT 
+    'customer' AS type,
+    c.first_name || ' ' || c.last_name AS name
+FROM customer c -- alias
+WHERE c.first_name ILIKE 'b%';
+
+
+
+
+FROM 
+    film_category;
+
 FROM
     address;
 
@@ -27,8 +50,6 @@ FROM
 FROM
     country;
 
-FROM
-    category;
 
 FROM
     customer;

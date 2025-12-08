@@ -1,0 +1,2 @@
+customer_id,store_id,first_name,last_name,address_id,active
+1,1,JOHN,DOE,1,1
